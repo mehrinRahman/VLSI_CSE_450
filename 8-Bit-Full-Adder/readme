@@ -1,0 +1,19 @@
+# 8-Bit Full Adder
+
+This project implements an **8-bit Full Adder using VHDL** by connecting eight 1-bit Full Adders in a **Ripple Carry** configuration.
+
+### Inputs
+
+* A (8-bit)
+* B (8-bit)
+* Cin
+
+### Outputs
+
+* Sum (8-bit)
+* Cout
+
+### Files
+
+* `Full_adder.vhd` — 8-bit Full Adder
+* `Fulladder.vhd` — Testbench
