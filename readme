@@ -1,0 +1,18 @@
+# 8-Bit Full Adder Using NOR Gates
+
+This project implements an **8-bit Full Adder** using **1-bit Full Adders** in a structural VHDL design.
+
+### Features
+
+* 1-bit Full Adder using only NOR gates
+* 8-bit Ripple Carry Full Adder
+* VHDL implementation
+* Testbench included
+
+### Files
+
+* `NOR_GATE.vhd` — 2-input NOR gate
+* `One_bit.vhd` — 1-bit Full Adder
+* `Full_adder.vhd` — 8-bit Full Adder
+* `One_Bit_Test.vhd` — 1-bit testbench
+* `Fulladder.vhd` — 8-bit testbench
