@@ -1,0 +1,70 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity SR_Latch1_tb is
+end SR_Latch1_tb;
+
+architecture Behavioral of SR_Latch1_tb is
+
+    component SR_Latch1
+        Port (
+            S    : in  STD_LOGIC;
+            R    : in  STD_LOGIC;
+            Q    : out STD_LOGIC;
+            Qbar : out STD_LOGIC
+        );
+    end component;
+
+    signal S    : STD_LOGIC := '1';
+    signal R    : STD_LOGIC := '1';
+    signal Q    : STD_LOGIC;
+    signal Qbar : STD_LOGIC;
+
+begin
+
+    UUT: SR_Latch1
+        port map (
+            S    => S,
+            R    => R,
+            Q    => Q,
+            Qbar => Qbar
+        );
+
+    stim_proc: process
+    begin
+
+        -- SET: S=0, R=1
+        S <= '0';
+        R <= '1';
+        wait for 10 ns;
+
+        -- HOLD: S=1, R=1
+        S <= '1';
+        R <= '1';
+        wait for 10 ns;
+
+        -- RESET: S=1, R=0
+        S <= '1';
+        R <= '0';
+        wait for 10 ns;
+
+        -- HOLD: S=1, R=1
+        S <= '1';
+        R <= '1';
+        wait for 10 ns;
+
+        -- INVALID: S=0, R=0
+        S <= '0';
+        R <= '0';
+        wait for 10 ns;
+
+        -- Back to HOLD
+        S <= '1';
+        R <= '1';
+        wait for 10 ns;
+
+        wait;
+
+    end process;
+
+end Behavioral;
